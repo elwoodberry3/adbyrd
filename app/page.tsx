@@ -66,18 +66,15 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-[#ECEEF1] px-2 py-2 font-sans text-[#5C646D] antialiased sm:px-4 sm:py-4">
+    <main className="min-h-screen bg-[#f9f9f9] px-2 py-2 font-sans text-[#000000] antialiased sm:px-4 sm:py-4">
       {/* Rounded page canvas, echoing the reference layout */}
-      <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl bg-white shadow-sm">
+      <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl bg-white shadow-sm">
         {/* ============================== NAV ============================== */}
         <header className="flex items-center justify-between border-b border-[#1A1D20]/5 px-5 py-4 sm:px-8">
           <a href="#" className="flex items-center gap-2.5">
             {/* Place logo.png in /public */}
             <img src="/logo.png" alt="Adbyrd" className="h-9 w-auto sm:h-10" />
-            <span className="text-lg font-semibold tracking-[-0.01em]">
-              <span className="text-[#5C646D]">AD</span>
-              <span className="text-[#FF6B00]">BYRD</span>
-            </span>
+
           </a>
           <BookCallButton />
         </header>
@@ -131,31 +128,17 @@ export default function Page() {
 
             {/* Video shell — drop your Wistia / Vimeo / YouTube iframe inside */}
             <div className="relative aspect-video overflow-hidden rounded-3xl bg-[#1A1D20] shadow-2xl ring-1 ring-[#1A1D20]/10">
+              
               {/* Subtle brand glow */}
               <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#FF6B00]/20 blur-3xl" />
               <div className="absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-[#E04A00]/15 blur-3xl" />
 
               {/* Replace this block with your video embed:
                   <iframe src="..." className="absolute inset-0 h-full w-full" allowFullScreen /> */}
-              <a
-                href={BOOKING_URL}
-                aria-label="Play the Adbyrd overview video"
-                className="group absolute inset-0 flex flex-col items-center justify-center gap-4 focus-visible:outline-none"
-              >
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-b from-[#FF6B00] to-[#E04A00] shadow-lg shadow-[#FF6B00]/40 transition group-hover:scale-105 group-focus-visible:ring-2 group-focus-visible:ring-white sm:h-20 sm:w-20">
-                  <svg
-                    className="ml-1 h-6 w-6 text-white sm:h-7 sm:w-7"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 5.5v13l11-6.5-11-6.5z" />
-                  </svg>
-                </span>
-                <span className="text-xs font-semibold uppercase tracking-[0.05em] text-white/70">
-                  Watch the 3-minute overview
-                </span>
-              </a>
+                  <iframe className="absolute inset-0 h-full w-full" allowFullScreen src="https://www.youtube.com/embed/YqiQ-NPk-AY?si=u3uO_aaoC1M8YXzi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              
+              
+              
             </div>
 
             {/* Mobile stat strip (replaces floating cards on small screens) */}
@@ -338,10 +321,6 @@ export default function Page() {
         <footer className="flex flex-col items-center justify-between gap-4 border-t border-[#1A1D20]/5 px-5 py-8 sm:flex-row sm:px-8">
           <div className="flex items-center gap-2">
             <img src="/logo.png" alt="" className="h-7 w-auto" />
-            <span className="text-sm font-semibold tracking-[-0.01em]">
-              <span className="text-[#5C646D]">AD</span>
-              <span className="text-[#FF6B00]">BYRD</span>
-            </span>
           </div>
           <p className="text-xs text-[#5C646D]/60">
             © {new Date().getFullYear()} Adbyrd, LLC. All rights reserved.

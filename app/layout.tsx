@@ -11,8 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Adbyrd — Your Agency Team, Always On",
-  description:
-    "Adbyrd builds and operates AI-native marketing departments powered by specialist agents, persistent client memory, and human-governed execution. Book a free 15-minute call.",
+  description: "Adbyrd builds and operates AI-native marketing departments powered by specialist agents, persistent client memory, and human-governed execution. Book a free 15-minute call.",
   openGraph: {
     title: "Adbyrd — Your Agency Team, Always On",
     description:
