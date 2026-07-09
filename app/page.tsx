@@ -135,7 +135,7 @@ export default function Page() {
 
               {/* Replace this block with your video embed:
                   <iframe src="..." className="absolute inset-0 h-full w-full" allowFullScreen /> */}
-                  <iframe className="absolute inset-0 h-full w-full" allowFullScreen src="https://www.youtube.com/embed/YqiQ-NPk-AY?si=u3uO_aaoC1M8YXzi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <iframe className="absolute inset-0 h-full w-full" allowFullScreen src="https://www.youtube.com/embed/YqiQ-NPk-AY?si=u3uO_aaoC1M8YXzi" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
               
               
               
