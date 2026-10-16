@@ -4,25 +4,60 @@
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Sora Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand palette — deep forest + electric lime, with a cyan "intelligence" glow */
-  --color-ink: #08201a;
-  --color-forest: #0d3328;
-  --color-forest-2: #134a3a;
-  --color-moss: #1f6b52;
-  --color-lime: #c9f26b;
-  --color-lime-2: #b3e04a;
-  --color-glow: #45e3c2;
-  --color-mint: #e7f2ea;
-  --color-sage: #d5e6da;
-  --color-cloud: #f5f8f4;
-  --color-slate: #4a5f57;
-  --color-line: #dbe6de;
+  /* Brand palette — drawn from the Adbyrd Sentinel character sheet:
+     night-floor slate, misty sky, ivory fog, helmet cream, and a muted
+     helmet-orange "ember" used sparingly as the accent. Logo orange stays in the logo. */
+  --color-ink: #121726;
+  --color-night: #1c2433;
+  --color-night-2: #283143;
+  --color-steel: #4f5f6e;
+  --color-mist: #a8bfc0;
+  --color-mist-2: #7f9a9c;
+  --color-ember: #e07a3f;
+  --color-ember-2: #c9642b;
+  --color-brand: #f05a26;
+  --color-cream: #dad4be;
+  --color-fog: #e9ecea;
+  --color-haze: #d3d9d8;
+  --color-ivory: #f6f4ef;
+  --color-slate: #566170;
+  --color-line: #e2e3dd;
+
+  /* Corner radii (per int-001 review): pills/buttons 7px, cards & sections 0.5rem */
+  --radius-pill: 7px;
 
   --animate-spin-slow: spin 28s linear infinite;
   --animate-spin-rev: spin-rev 40s linear infinite;
   --animate-float: float 7s ease-in-out infinite;
-  --animate-pulse-glow: pulse-glow 4.5s ease-in-out infinite;
+  --animate-pulse-mist: pulse-glow 4.5s ease-in-out infinite;
 
+  --animate-dash: dash 1.4s linear infinite;
+  --animate-blink: blink 2.6s steps(1) infinite;
+  --animate-look: look 7s ease-in-out infinite alternate;
+  --animate-iris: iris 2.2s ease-in-out infinite;
+  --animate-scanbar: scanbar 3.2s ease-in-out infinite;
+
+  @keyframes dash {
+    to { stroke-dashoffset: -24; }
+  }
+  @keyframes blink {
+    0%, 82%, 100% { opacity: 1; }
+    88% { opacity: 0.15; }
+  }
+  @keyframes look {
+    0% { transform: rotate(-3deg) translateY(1px); }
+    45% { transform: rotate(1.5deg) translateY(-2px); }
+    100% { transform: rotate(3.5deg) translateY(0); }
+  }
+  @keyframes iris {
+    0%, 100% { transform: scale(0.82); opacity: 0.75; }
+    50% { transform: scale(1.12); opacity: 1; }
+  }
+  @keyframes scanbar {
+    0% { width: 8%; }
+    60% { width: 100%; }
+    100% { width: 100%; opacity: 0.4; }
+  }
   @keyframes spin-rev {
     to { transform: rotate(-360deg); }
   }
@@ -51,13 +86,13 @@
     text-wrap: pretty;
   }
   ::selection {
-    background: var(--color-lime);
+    background: var(--color-ember);
     color: var(--color-ink);
   }
   :focus-visible {
-    outline: 2px solid var(--color-moss);
+    outline: 2px solid var(--color-ember);
     outline-offset: 3px;
-    border-radius: 6px;
+    border-radius: 4px;
   }
 }
 

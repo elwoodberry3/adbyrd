@@ -34,10 +34,10 @@ export default function IndustryCarousel() {
             aria-selected={idx === i}
             aria-controls="industry-panel"
             onClick={() => setI(idx)}
-            className={`shrink-0 rounded-full border-2 px-5 py-3 text-sm font-semibold transition-colors ${
+            className={`shrink-0 rounded-pill border-2 px-5 py-3 text-sm font-semibold transition-colors ${
               idx === i
-                ? "border-forest bg-lime text-ink"
-                : "border-forest bg-forest text-white hover:bg-forest-2"
+                ? "border-ember bg-white text-ink"
+                : "border-night bg-night text-white hover:bg-night-2"
             }`}
           >
             {ind.name}
@@ -50,12 +50,12 @@ export default function IndustryCarousel() {
         id="industry-panel"
         role="tabpanel"
         aria-live="polite"
-        className="mt-8 grid overflow-hidden rounded-[1.75rem] bg-white shadow-xl shadow-forest/5 ring-1 ring-line md:grid-cols-[0.9fr_1.1fr]"
+        className="mt-8 grid overflow-hidden rounded-lg bg-white shadow-xl shadow-night/5 ring-1 ring-line md:grid-cols-[0.9fr_1.1fr]"
       >
-        <div className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-forest">
+        <div className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-night">
           <div className="grid-fade absolute inset-0" />
-          <div className="absolute h-56 w-56 rounded-full bg-glow/30 blur-3xl" />
-          <div className="relative grid h-28 w-28 place-items-center rounded-[2rem] bg-lime text-ink shadow-2xl shadow-black/40">
+          <div className="absolute h-56 w-56 rounded-full bg-mist/30 blur-3xl" />
+          <div className="relative grid h-28 w-28 place-items-center rounded-lg bg-cream text-night shadow-2xl shadow-black/40">
             <Icon className="h-12 w-12" strokeWidth={1.6} />
           </div>
           <span className="absolute bottom-5 left-6 font-display text-sm font-semibold text-white/60">
@@ -65,12 +65,12 @@ export default function IndustryCarousel() {
 
         <div className="flex flex-col justify-between gap-8 p-8 sm:p-10">
           <div>
-            <p className="text-xs font-semibold tracking-[0.18em] text-moss uppercase">What Adbyrd Can Deliver</p>
+            <p className="text-xs font-semibold tracking-[0.18em] text-steel uppercase">What Adbyrd Can Deliver</p>
             <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">{item.name}</h3>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {item.deliver.map((d) => (
                 <li key={d} className="flex items-start gap-2.5 text-slate">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint text-moss">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-pill bg-fog text-steel">
                     <Check className="h-3 w-3" strokeWidth={3} />
                   </span>
                   {d}
@@ -84,14 +84,14 @@ export default function IndustryCarousel() {
               <button
                 onClick={() => go(i - 1)}
                 aria-label="Previous industry"
-                className="grid h-11 w-11 place-items-center rounded-full ring-1 ring-line transition-colors hover:bg-cloud"
+                className="grid h-11 w-11 place-items-center rounded-pill ring-1 ring-line transition-colors hover:bg-ivory"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={() => go(i + 1)}
                 aria-label="Next industry"
-                className="grid h-11 w-11 place-items-center rounded-full bg-forest text-lime transition-colors hover:bg-forest-2"
+                className="grid h-11 w-11 place-items-center rounded-pill bg-night text-mist transition-colors hover:bg-night-2"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>

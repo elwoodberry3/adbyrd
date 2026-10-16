@@ -5,7 +5,7 @@ export const site = {
   tagline: "Intelligence, Engineered.",
   description:
     "Adbyrd engineers custom applications, AI-powered workflows, and agentic systems that turn ambitious ideas into measurable business capabilities. Based in Kalamazoo, Michigan.",
-  location: "Kalamazoo, Michigan, USA",
+  location: "251 N Rose St, Kalamazoo, MI 49007",
 };
 
 export const nav = [

@@ -1,0 +1,7 @@
+# Adbyrd security contact — see https://securitytxt.org
+# PLACEHOLDER: consider a dedicated security@adbyrd.com address and renew Expires yearly.
+Contact: mailto:support@adbyrd.com
+Expires: 2027-10-16T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://adbyrd.com/.well-known/security.txt
+Policy: https://adbyrd.com/legal/security

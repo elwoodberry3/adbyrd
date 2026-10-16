@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Adbyrd is a majority woman-of-color-owned agentic development firm headquartered in Kalamazoo, Michigan.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
@@ -43,7 +44,7 @@ export default function AboutPage() {
       <section className="container-x grid gap-14 py-20 lg:grid-cols-[1fr_1fr] lg:py-28">
         <div>
           <SectionHeading eyebrow="Our Story" title="Built in Western Michigan. Thinking Beyond Boundaries." />
-          <p className="mt-8 font-display text-2xl leading-snug font-semibold text-forest">
+          <p className="mt-8 font-display text-2xl leading-snug font-semibold text-night">
             Great technology doesn&apos;t have to come from Silicon Valley.
           </p>
         </div>
@@ -60,19 +61,19 @@ export default function AboutPage() {
             We believe better technology begins with different perspectives, thoughtful questions, and the willingness to
             challenge conventional solutions.
           </p>
-          <p className="border-l-4 border-lime pl-5 font-semibold text-ink">
+          <p className="border-l-4 border-ember pl-5 font-semibold text-ink">
             Our headquarters may be in Kalamazoo. Our vision has no geographic limits.
           </p>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="bg-cloud py-20 lg:py-28">
+      <section className="bg-ivory py-20 lg:py-28">
         <div className="container-x grid gap-6 lg:grid-cols-2">
-          <div className="relative overflow-hidden rounded-[2rem] bg-forest p-10 text-white sm:p-12">
-            <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-glow/25 blur-3xl" />
-            <Target className="relative h-10 w-10 text-lime" />
-            <p className="relative mt-8 text-xs font-semibold tracking-[0.18em] text-lime uppercase">Our Mission</p>
+          <div className="relative overflow-hidden rounded-lg bg-night p-10 text-white sm:p-12">
+            <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-mist/25 blur-3xl" />
+            <Target className="relative h-10 w-10 text-mist" />
+            <p className="relative mt-8 text-xs font-semibold tracking-[0.18em] text-mist uppercase">Our Mission</p>
             <h2 className="relative mt-3 text-3xl leading-tight font-semibold">
               Make Intelligent Technology Accessible, Practical, and Transformative.
             </h2>
@@ -81,9 +82,9 @@ export default function AboutPage() {
               systems that improve operations, expand capabilities, and create new opportunities for growth.
             </p>
           </div>
-          <div className="rounded-[2rem] bg-white p-10 ring-1 ring-line sm:p-12">
-            <Compass className="h-10 w-10 text-moss" />
-            <p className="mt-8 text-xs font-semibold tracking-[0.18em] text-moss uppercase">Our Vision</p>
+          <div className="rounded-lg bg-white p-10 ring-1 ring-line sm:p-12">
+            <Compass className="h-10 w-10 text-steel" />
+            <p className="mt-8 text-xs font-semibold tracking-[0.18em] text-steel uppercase">Our Vision</p>
             <h2 className="mt-3 text-3xl leading-tight font-semibold">
               A Future Where Businesses Operate With Intelligence Built In.
             </h2>
@@ -106,8 +107,8 @@ export default function AboutPage() {
         <SectionHeading center eyebrow="Our Principles" title="What Guides Every Engagement." />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {principles.map((p, i) => (
-            <div key={p.title} className="group rounded-[1.5rem] p-8 ring-1 ring-line transition-colors hover:bg-mint">
-              <span className="font-display text-4xl font-semibold text-sage transition-colors group-hover:text-moss">
+            <div key={p.title} className="group rounded-lg p-8 ring-1 ring-line transition-colors hover:bg-fog">
+              <span className="font-display text-4xl font-semibold text-haze transition-colors group-hover:text-steel">
                 0{i + 1}
               </span>
               <h3 className="mt-5 text-xl font-semibold">{p.title}</h3>
@@ -119,8 +120,8 @@ export default function AboutPage() {
 
       {/* The Adbyrd Difference */}
       <section className="px-3 sm:px-5">
-        <div className="relative overflow-hidden rounded-[2rem] bg-ink text-white">
-          <div className="pointer-events-none absolute right-0 bottom-0 h-[420px] w-[420px] rounded-full bg-lime/10 blur-[120px]" />
+        <div className="relative overflow-hidden rounded-lg bg-ink text-white">
+          <div className="pointer-events-none absolute right-0 bottom-0 h-[420px] w-[420px] rounded-full bg-mist/10 blur-[120px]" />
           <div className="container-x relative py-20 lg:py-28">
             <div className="grid gap-12 lg:grid-cols-2">
               <div>
@@ -151,8 +152,8 @@ export default function AboutPage() {
                 { icon: Users, t: "The user experience" },
                 { icon: Layers, t: "The technical architecture required to deliver it" },
               ].map(({ icon: Icon, t }) => (
-                <div key={t} className="glass flex items-center gap-4 rounded-2xl p-6">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-lime text-ink">
+                <div key={t} className="glass flex items-center gap-4 rounded-lg p-6">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-ember text-ink">
                     <Icon className="h-6 w-6" />
                   </span>
                   <p className="font-display text-lg font-semibold">{t}</p>
@@ -162,7 +163,7 @@ export default function AboutPage() {
 
             <div className="mt-14 grid gap-2 border-t border-white/10 pt-10 sm:grid-cols-2">
               <p className="text-xl text-white/70">The objective is never to sell you more technology than you need.</p>
-              <p className="font-display text-2xl font-semibold text-lime sm:text-right">The objective is to build what works.</p>
+              <p className="font-display text-2xl font-semibold text-mist sm:text-right">The objective is to build what works.</p>
             </div>
           </div>
         </div>

@@ -33,7 +33,7 @@ export default function Header() {
         </Link>
 
         <nav aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-1 rounded-full bg-cloud p-1.5 ring-1 ring-line">
+          <ul className="flex items-center gap-1 rounded-pill bg-ivory p-1.5 ring-1 ring-line">
             {nav.map((item) => {
               const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
               return (
@@ -41,8 +41,8 @@ export default function Header() {
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`block rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                      active ? "bg-forest text-white" : "text-slate hover:text-ink"
+                    className={`block rounded-pill px-4 py-2 text-sm font-medium transition-colors ${
+                      active ? "bg-night text-white" : "text-slate hover:text-ink"
                     }`}
                   >
                     {item.label}
@@ -61,7 +61,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="grid h-11 w-11 place-items-center rounded-full bg-cloud ring-1 ring-line lg:hidden"
+          className="grid h-11 w-11 place-items-center rounded-pill bg-ivory ring-1 ring-line lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -79,7 +79,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={`block rounded-xl px-3 py-3 text-base font-medium ${
-                    pathname === item.href ? "bg-mint text-forest" : "text-ink"
+                    pathname === item.href ? "bg-fog text-night" : "text-ink"
                   }`}
                 >
                   {item.label}

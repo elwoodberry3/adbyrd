@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 30 920 1020">
+  <defs>
+    <linearGradient id="a" x1="397.1" y1="120.2" x2="877.1" y2="600.3" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eb2027"/><stop offset=".1" stop-color="#eb2426"/><stop offset=".2" stop-color="#ec3125"/><stop offset=".3" stop-color="#ee4824"/><stop offset=".5" stop-color="#f26722"/><stop offset=".5" stop-color="#f58520"/><stop offset=".8" stop-color="#f69220"/><stop offset=".9" stop-color="#f58d20"/><stop offset=".9" stop-color="#f47f20"/><stop offset=".9" stop-color="#f26922"/><stop offset="1" stop-color="#ef4923"/><stop offset="1" stop-color="#ed2d25"/>
+    </linearGradient>
+    <linearGradient id="b" x1="492.6" y1="469.2" x2="750.4" y2="727" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eb2027"/><stop offset=".4" stop-color="#f05923"/><stop offset=".8" stop-color="#f48220"/><stop offset="1" stop-color="#f69220"/>
+    </linearGradient>
+    <linearGradient id="c" x1="151" y1="678" x2="708.5" y2="120.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f69220"/><stop offset="1" stop-color="#f05a26"/>
+    </linearGradient>
+    <linearGradient id="d" x1="545.1" y1="84.7" x2="545.8" y2="42.4" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f05a26"/><stop offset=".4" stop-color="#f05c25"/><stop offset=".6" stop-color="#f16324"/><stop offset=".7" stop-color="#f27123"/><stop offset=".8" stop-color="#f48321"/><stop offset=".9" stop-color="#f69220"/><stop offset=".9" stop-color="#f7a74c"/><stop offset=".9" stop-color="#fac68b"/><stop offset="1" stop-color="#fcdebd"/><stop offset="1" stop-color="#fdf0e1"/><stop offset="1" stop-color="#fefbf7"/><stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <polygon fill="url(#a)" points="709.3 743.7 473.4 44 632 44 847.7 629.8 709.3 743.7"/>
+  <polygon fill="url(#b)" points="440.8 613 709.3 743.7 848.2 629.2 487.4 474.4 440.8 613"/>
+  <polygon fill="#db4d26" points="548.5 500.6 487.4 474.4 440.8 613 485.7 634.8 548.5 500.6"/>
+  <polygon fill="#db4d26" points="563.2 310 665.1 133.6 632 43.7 473.4 43.7 563.2 310"/>
+  <polygon fill="url(#c)" points="216.7 743.7 396.9 743.7 632 44 473.4 44 216.7 743.7"/>
+  <path fill="url(#d)" d="M459,83.2c47.8-12.6,104.2-23.5,170.5-32l2.5-7.3h-158.6l-14.4,39.3Z"/>
+  <g>
+    <path fill="#818282" d="M200.6,987.1h-79.4l-18,49.1h-15.5l66.2-175h14.1l66.2,175h-15.4l-18.1-49.1ZM125.7,974.6h70.2l-35.1-95.3-35.1,95.3Z"/>
+    <path fill="#818282" d="M259.8,1036.3v-175h48.9c14.3,0,27.2,3.3,38.6,9.8,11.4,6.5,20.2,15.9,26.6,28.1,6.4,12.2,9.6,26,9.6,41.6v16.1c0,15.6-3.2,29.5-9.5,41.6-6.3,12.1-15.2,21.4-26.7,28-11.5,6.6-24.7,9.9-39.6,9.9h-47.8ZM274.6,873.8v150h33.2c18.4,0,33.2-6.1,44.3-18.3s16.7-28.8,16.7-49.6v-15.4c0-20.1-5.5-36.2-16.5-48.3-11-12.1-25.4-18.2-43.4-18.3h-34.4Z"/>
+    <path fill="#ce4c27" d="M421,1036.3v-175h51.7c18.7,0,33,3.9,42.7,11.6,9.7,7.7,14.5,19.1,14.5,34.2s-2.5,16.9-7.4,23.6c-4.9,6.7-11.7,11.5-20.2,14.4,10.2,2.2,18.4,7.3,24.6,15,6.2,7.8,9.3,16.7,9.3,26.9,0,15.5-5,27.5-15,36.2-10,8.7-23.9,13-41.6,13h-58.5ZM435.7,939.8h40.4c12.3-.2,21.9-3.1,28.7-8.7,6.8-5.6,10.2-13.7,10.2-24.4s-3.5-19.5-10.5-24.9c-7-5.3-17.6-8-31.8-8h-36.9v66ZM435.7,952.3v71.5h44.3c12.7,0,22.7-3.2,30.1-9.7,7.4-6.4,11.1-15.4,11.1-26.8s-3.5-19.3-10.6-25.6c-7.1-6.3-16.9-9.4-29.4-9.4h-45.5Z"/>
+    <path fill="#ce4c27" d="M616.5,956.7l53.5-95.4h17.1l-63.2,109.1v65.9h-14.8v-65.9l-63.1-109.1h17.5l53,95.4Z"/>
+    <path fill="#ce4c27" d="M777.9,963.3h-50.8v72.9h-14.9v-175h56.8c18.7,0,33.2,4.5,43.7,13.6,10.5,9,15.7,21.7,15.7,37.9s-3.3,21.1-9.8,29.6c-6.6,8.6-15.4,14.5-26.4,17.8l43.7,74.5v1.6h-15.7l-42.3-72.9ZM727,950.8h45.3c12.4,0,22.4-3.5,29.9-10.6,7.5-7.1,11.3-16.2,11.3-27.4s-3.9-21.9-11.8-28.8c-7.9-6.8-18.9-10.2-33.1-10.2h-41.7v77Z"/>
+    <path fill="#ce4c27" d="M868.7,1036.3v-175h48.9c14.3,0,27.2,3.3,38.6,9.8,11.4,6.5,20.2,15.9,26.6,28.1,6.4,12.2,9.6,26,9.6,41.6v16.1c0,15.6-3.2,29.5-9.5,41.6-6.3,12.1-15.2,21.4-26.7,28-11.5,6.6-24.7,9.9-39.6,9.9h-47.8ZM883.5,873.8v150h33.2c18.4,0,33.2-6.1,44.3-18.3,11.1-12.2,16.7-28.8,16.7-49.6v-15.4c0-20.1-5.5-36.2-16.5-48.3-11-12.1-25.4-18.2-43.4-18.3h-34.4Z"/>
+  </g>
+</svg>

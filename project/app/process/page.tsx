@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: "Our Development Process",
   description:
     "The Adbyrd Development Framework: eight stages from discovery to ongoing partnership, with accountability and responsible agentic engineering built in.",
+  alternates: { canonical: "/process" },
 };
 
 const accIcons = [CalendarCheck, MessagesSquare, FileText, GitPullRequestArrow, ShieldCheck, LifeBuoy];
@@ -27,12 +28,12 @@ export default function ProcessPage() {
         eyebrow="The Adbyrd Development Framework"
         title="Big Ideas Need More Than Great Code. They Need a Plan."
         aside={
-          <ol className="glass space-y-1 rounded-[1.75rem] p-6">
+          <ol className="glass space-y-1 rounded-lg p-6">
             {stages.map((s, i) => (
               <li key={s.label} className="flex items-center gap-4 rounded-xl px-3 py-2.5 text-sm">
                 <span
-                  className={`grid h-8 w-8 shrink-0 place-items-center rounded-full font-display text-xs font-semibold ${
-                    i === 0 ? "bg-lime text-ink" : "bg-white/10 text-white"
+                  className={`grid h-8 w-8 shrink-0 place-items-center rounded-pill font-display text-xs font-semibold ${
+                    i === 0 ? "bg-ember text-ink" : "bg-white/10 text-white"
                   }`}
                 >
                   0{i + 1}
@@ -68,18 +69,18 @@ export default function ProcessPage() {
             const right = i % 2 === 1;
             return (
               <li key={s.label} className="relative pb-10 pl-16 md:grid md:grid-cols-2 md:gap-16 md:pl-0">
-                <span className="absolute top-0 left-0 z-10 grid h-12 w-12 place-items-center rounded-full bg-forest font-display text-sm font-semibold text-lime ring-8 ring-white md:left-1/2 md:-translate-x-1/2">
+                <span className="absolute top-0 left-0 z-10 grid h-12 w-12 place-items-center rounded-pill bg-night font-display text-sm font-semibold text-mist ring-8 ring-white md:left-1/2 md:-translate-x-1/2">
                   0{i + 1}
                 </span>
                 <div className={right ? "md:col-start-2" : "md:col-start-1 md:text-right"}>
-                  <div className="rounded-[1.5rem] bg-white p-7 text-left ring-1 ring-line transition-shadow hover:shadow-xl hover:shadow-forest/5">
-                    <p className="text-xs font-semibold tracking-[0.16em] text-moss uppercase">{s.label}</p>
+                  <div className="rounded-lg bg-white p-7 text-left ring-1 ring-line transition-shadow hover:shadow-xl hover:shadow-night/5">
+                    <p className="text-xs font-semibold tracking-[0.16em] text-steel uppercase">{s.label}</p>
                     <h3 className="mt-2 text-xl font-semibold">{s.title}</h3>
                     <p className="mt-3 leading-relaxed text-slate">{s.body}</p>
-                    <div className="mt-5 flex items-start gap-2 rounded-xl bg-mint px-4 py-3 text-sm">
-                      <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-moss" />
+                    <div className="mt-5 flex items-start gap-2 rounded-xl bg-fog px-4 py-3 text-sm">
+                      <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-steel" />
                       <p>
-                        <span className="font-semibold text-forest">Your outcome: </span>
+                        <span className="font-semibold text-night">Your outcome: </span>
                         {s.outcome}
                       </p>
                     </div>
@@ -92,7 +93,7 @@ export default function ProcessPage() {
       </section>
 
       {/* Accountability */}
-      <section className="bg-cloud py-20 lg:py-28">
+      <section className="bg-ivory py-20 lg:py-28">
         <div className="container-x">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-end">
             <SectionHeading
@@ -111,8 +112,8 @@ export default function ProcessPage() {
             {accountability.map((a, i) => {
               const Icon = accIcons[i];
               return (
-                <div key={a.title} className="rounded-[1.5rem] bg-white p-8 ring-1 ring-line">
-                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-forest text-lime">
+                <div key={a.title} className="rounded-lg bg-white p-8 ring-1 ring-line">
+                  <span className="grid h-12 w-12 place-items-center rounded-lg bg-night text-mist">
                     <Icon className="h-5 w-5" />
                   </span>
                   <h3 className="mt-6 text-lg font-semibold">{a.title}</h3>
@@ -126,9 +127,9 @@ export default function ProcessPage() {
 
       {/* Responsible Agentic Engineering */}
       <section className="px-3 py-3 sm:px-5">
-        <div className="relative overflow-hidden rounded-[2rem] bg-forest text-white">
+        <div className="relative overflow-hidden rounded-lg bg-night text-white">
           <div className="grid-fade pointer-events-none absolute inset-0" />
-          <div className="pointer-events-none absolute -top-40 left-1/3 h-[500px] w-[500px] rounded-full bg-glow/20 blur-[130px]" />
+          <div className="pointer-events-none absolute -top-40 left-1/3 h-[500px] w-[500px] rounded-full bg-mist/20 blur-[130px]" />
           <div className="container-x relative grid gap-14 py-20 lg:grid-cols-2 lg:py-28">
             <div>
               <SectionHeading
@@ -154,14 +155,14 @@ export default function ProcessPage() {
                   "Evaluation against defined tasks",
                   "The ability to investigate failures",
                 ].map((t) => (
-                  <li key={t} className="glass rounded-2xl px-5 py-4 text-sm font-medium">
+                  <li key={t} className="glass rounded-lg px-5 py-4 text-sm font-medium">
                     {t}
                   </li>
                 ))}
               </ul>
-              <div className="border-l-4 border-lime pl-6">
+              <div className="border-l-4 border-ember pl-6">
                 <p className="text-lg text-white/70">The goal isn&apos;t maximum autonomy.</p>
-                <p className="mt-1 font-display text-2xl font-semibold text-lime sm:text-3xl">
+                <p className="mt-1 font-display text-2xl font-semibold text-mist sm:text-3xl">
                   It&apos;s the right level of autonomy for the job.
                 </p>
               </div>

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "What We Do",
   description:
     "Agentic AI development, custom software, business process automation, AI integration and modernization, product strategy and UX, and managed AI operations.",
+  alternates: { canonical: "/what-we-do" },
 };
 
 const visuals = ["nodes", "circuit", "waves", "circuit", "waves", "nodes"] as const;
@@ -21,7 +22,7 @@ export default function WhatWeDoPage() {
         title="Whatever Your Business Needs Next, Let's Build It."
         aside={
           <div className="mx-auto max-w-[420px]">
-            <AICore />
+            <AICore showCards={false} />
           </div>
         }
       >
@@ -33,7 +34,7 @@ export default function WhatWeDoPage() {
           Whatever the challenge, Adbyrd combines strategic thinking and technical execution to transform your ideas into
           functional, connected, and scalable technology.
         </p>
-        <p className="font-display font-semibold text-lime">You bring the business vision. We help engineer the solution.</p>
+        <p className="font-display font-semibold text-mist">You bring the business vision. We help engineer the solution.</p>
         <div className="flex flex-wrap gap-3 pt-4">
           <Button href="/contact">Discuss Your Project</Button>
           <Button href="/process" variant="outline-light">
@@ -51,7 +52,7 @@ export default function WhatWeDoPage() {
               <li key={s.id} className="shrink-0">
                 <a
                   href={`#${s.id}`}
-                  className="inline-flex items-center gap-2 rounded-full bg-cloud px-4 py-2.5 text-sm font-medium text-slate ring-1 ring-line transition-colors hover:bg-forest hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-pill bg-ivory px-4 py-2.5 text-sm font-medium text-slate ring-1 ring-line transition-colors hover:bg-night hover:text-white"
                 >
                   <Icon className="h-4 w-4" />
                   {s.eyebrow}
@@ -71,14 +72,14 @@ export default function WhatWeDoPage() {
             <section
               key={s.id}
               id={s.id}
-              className="scroll-mt-24 grid overflow-hidden rounded-[2rem] bg-white ring-1 ring-line lg:grid-cols-[1.35fr_1fr]"
+              className="scroll-mt-24 grid overflow-hidden rounded-lg bg-white ring-1 ring-line lg:grid-cols-[1.35fr_1fr]"
             >
               <div className={`p-8 sm:p-12 ${flip ? "lg:order-2" : ""}`}>
                 <div className="flex items-center gap-3">
-                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-mint text-forest">
+                  <span className="grid h-12 w-12 place-items-center rounded-lg bg-fog text-night">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <p className="text-xs font-semibold tracking-[0.18em] text-moss uppercase">{s.eyebrow}</p>
+                  <p className="text-xs font-semibold tracking-[0.18em] text-steel uppercase">{s.eyebrow}</p>
                 </div>
                 <h2 className="mt-6 text-3xl leading-tight font-semibold sm:text-4xl">{s.title}</h2>
                 <div className="mt-5 space-y-3 leading-relaxed text-slate">
@@ -91,19 +92,19 @@ export default function WhatWeDoPage() {
                 <p className="mt-8 text-sm font-semibold">{s.buildLabel}</p>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {s.build.map((b) => (
-                    <li key={b} className="rounded-full bg-cloud px-3.5 py-1.5 text-sm text-slate ring-1 ring-line">
+                    <li key={b} className="rounded-pill bg-ivory px-3.5 py-1.5 text-sm text-slate ring-1 ring-line">
                       {b}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className={`relative flex flex-col justify-end overflow-hidden bg-forest p-8 text-white sm:p-12 ${flip ? "lg:order-1" : ""}`}>
+              <div className={`relative flex flex-col justify-end overflow-hidden bg-night p-8 text-white sm:p-12 ${flip ? "lg:order-1" : ""}`}>
                 <div className="absolute top-8 left-1/2 h-[62%] w-[58%] max-w-[260px] -translate-x-1/2 opacity-85">
                   <ArchVisual variant={visuals[i]} className="h-full w-full ring-1 ring-white/10" />
                 </div>
-                <div className="glass relative mt-56 rounded-2xl p-6 lg:mt-0">
-                  <div className="flex items-center gap-2 text-lime">
+                <div className="glass relative mt-56 rounded-lg p-6 lg:mt-0">
+                  <div className="flex items-center gap-2 text-mist">
                     <TrendingUp className="h-4 w-4" />
                     <span className="text-xs font-semibold tracking-[0.18em] uppercase">Business outcome</span>
                   </div>
@@ -116,7 +117,7 @@ export default function WhatWeDoPage() {
       </div>
 
       {/* Engagement models (Ref 002 vertical table/cards) */}
-      <section className="bg-cloud py-20 lg:py-28">
+      <section className="bg-ivory py-20 lg:py-28">
         <div className="container-x">
           <SectionHeading center eyebrow="How We Can Work Together" title="The Right Engagement for the Right Challenge." />
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -125,30 +126,30 @@ export default function WhatWeDoPage() {
               return (
                 <div
                   key={e.name}
-                  className={`relative flex flex-col rounded-[1.75rem] p-8 ${
-                    featured ? "bg-forest text-white shadow-2xl shadow-forest/25" : "bg-white ring-1 ring-line"
+                  className={`relative flex flex-col rounded-lg p-8 ${
+                    featured ? "bg-night text-white shadow-2xl shadow-night/25" : "bg-white ring-1 ring-line"
                   }`}
                 >
                   {featured && (
-                    <span className="absolute top-6 right-6 rounded-full bg-lime px-3 py-1 text-xs font-semibold text-ink">
+                    <span className="absolute top-6 right-6 rounded-pill bg-ember px-3 py-1 text-xs font-semibold text-ink">
                       Agentic focus
                     </span>
                   )}
                   <h3 className="pr-24 text-2xl font-semibold">{e.name}</h3>
                   <div className={`my-6 h-px ${featured ? "bg-white/15" : "bg-line"}`} />
-                  <p className={`text-xs font-semibold tracking-[0.16em] uppercase ${featured ? "text-lime" : "text-moss"}`}>
+                  <p className={`text-xs font-semibold tracking-[0.16em] uppercase ${featured ? "text-mist" : "text-steel"}`}>
                     Ideal for
                   </p>
                   <p className={`mt-2 ${featured ? "text-white/80" : "text-slate"}`}>{e.idealFor}</p>
-                  <p className={`mt-6 text-xs font-semibold tracking-[0.16em] uppercase ${featured ? "text-lime" : "text-moss"}`}>
+                  <p className={`mt-6 text-xs font-semibold tracking-[0.16em] uppercase ${featured ? "text-mist" : "text-steel"}`}>
                     Deliverable
                   </p>
                   <p className="mt-2 flex flex-1 items-start gap-2 font-medium">
-                    <Check className={`mt-1 h-4 w-4 shrink-0 ${featured ? "text-lime" : "text-moss"}`} strokeWidth={3} />
+                    <Check className={`mt-1 h-4 w-4 shrink-0 ${featured ? "text-mist" : "text-steel"}`} strokeWidth={3} />
                     {e.deliverable}
                   </p>
                   <div className="mt-8">
-                    <Button href="/contact" variant={featured ? "lime" : "outline"}>
+                    <Button href="/contact" variant={featured ? "ember" : "outline"}>
                       Discuss This Engagement
                     </Button>
                   </div>
