@@ -18,24 +18,25 @@ if (verification.pinterest) otherVerification["p:domain_verify"] = verification.
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Adbyrd — Agentic AI & Custom Software Development",
+    default: "Adbyrd — Custom Apps & AI Receptionists for Small Business | Kalamazoo, MI",
     template: "%s · Adbyrd",
   },
   description: site.description,
   applicationName: "Adbyrd",
   authors: [{ name: "Adbyrd", url: SITE_URL }],
   keywords: [
-    "agentic AI development",
-    "AI agents",
-    "custom software development",
+    "small business app development",
+    "custom app developer Kalamazoo",
+    "AI receptionist for small business",
+    "online booking app",
+    "iPhone app development Michigan",
     "workflow automation",
-    "AI integration",
-    "Kalamazoo software company",
-    "Michigan AI development",
+    "Western Michigan software company",
+    "Grand Rapids app developer",
   ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Adbyrd — Intelligence, Engineered.",
+    title: "Adbyrd — Custom Apps & AI for Small Business",
     description: site.description,
     siteName: "Adbyrd",
     url: SITE_URL,
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adbyrd — Intelligence, Engineered.",
+    title: "Adbyrd — Custom Apps & AI for Small Business",
     description: site.description,
     // site: "@adbyrd", // add X/Twitter handle if one exists
   },

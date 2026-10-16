@@ -28,7 +28,7 @@ export default function InquiryForm() {
       "ADBYRD PROJECT INQUIRY",
       "",
       `Name: ${f.get("name")}`,
-      `Company / Organization: ${f.get("company") || "—"}`,
+      `Business Name: ${f.get("company") || "—"}`,
       `Business Email: ${f.get("email")}`,
       `What can we help you with? ${f.get("help")}`,
       `Where are you in the process? ${stage}`,
@@ -69,7 +69,7 @@ export default function InquiryForm() {
   return (
     <div className="rounded-lg bg-white p-6 shadow-xl shadow-night/5 ring-1 ring-line sm:p-10">
       <p className="text-xs font-semibold tracking-[0.18em] text-steel uppercase">Project Inquiry</p>
-      <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">Tell Us What You&apos;re Building.</h2>
+      <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">Tell Us About Your Business.</h2>
 
       <form
         onSubmit={onSubmit}
@@ -85,7 +85,7 @@ export default function InquiryForm() {
           <input name="name" required autoComplete="name" className={field} />
         </label>
         <label className={label}>
-          Company / Organization
+          Business Name
           <input name="company" autoComplete="organization" className={field} />
         </label>
         <label className={`${label} sm:col-span-2`}>
@@ -129,7 +129,7 @@ export default function InquiryForm() {
         </fieldset>
 
         <label className={`${label} sm:col-span-2`}>
-          Tell Us About Your Project <span className="text-steel">*</span>
+          What&apos;s Going On? Missed calls, booking headaches, an app idea… <span className="text-steel">*</span>
           <textarea name="project" required rows={5} className={`${field} resize-y`} />
         </label>
 

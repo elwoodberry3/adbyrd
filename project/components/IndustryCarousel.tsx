@@ -5,16 +5,16 @@ import {
   ChevronLeft,
   ChevronRight,
   Check,
-  Landmark,
+  Wrench,
+  Car,
   HeartPulse,
-  ShoppingBag,
-  Factory,
+  UtensilsCrossed,
   Briefcase,
-  GraduationCap,
+  Store,
 } from "lucide-react";
 import { industries } from "@/lib/content";
 
-const industryIcons = [Landmark, HeartPulse, ShoppingBag, Factory, Briefcase, GraduationCap];
+const industryIcons = [Wrench, Car, HeartPulse, UtensilsCrossed, Briefcase, Store];
 
 export default function IndustryCarousel() {
   const [i, setI] = useState(0);
@@ -65,7 +65,7 @@ export default function IndustryCarousel() {
 
         <div className="flex flex-col justify-between gap-8 p-8 sm:p-10">
           <div>
-            <p className="text-xs font-semibold tracking-[0.18em] text-steel uppercase">What Adbyrd Can Deliver</p>
+            <p className="text-xs font-semibold tracking-[0.18em] text-steel uppercase">What Adbyrd Can Build</p>
             <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">{item.name}</h3>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {item.deliver.map((d) => (
@@ -79,7 +79,7 @@ export default function IndustryCarousel() {
             </ul>
           </div>
           <div className="flex items-center justify-between gap-4">
-            <p className="text-sm text-slate">Scoped around the industry&apos;s security, privacy, and regulatory requirements.</p>
+            <p className="text-sm text-slate">Fixed price, typically $3,000–$7,500, built around how you work.</p>
             <div className="flex shrink-0 gap-2">
               <button
                 onClick={() => go(i - 1)}

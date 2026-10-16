@@ -5,8 +5,8 @@ import {
   ArrowUpRight,
   Bot,
   Code2,
-  PenTool,
   PlugZap,
+  Smartphone,
   Workflow,
   type LucideIcon,
 } from "lucide-react";
@@ -16,8 +16,8 @@ export const icons: Record<IconName, LucideIcon> = {
   bot: Bot,
   code: Code2,
   workflow: Workflow,
+  phone: Smartphone,
   plug: PlugZap,
-  pen: PenTool,
   activity: Activity,
 };
 

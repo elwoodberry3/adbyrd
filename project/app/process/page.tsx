@@ -12,9 +12,9 @@ import { Button, CtaBand, PageHero, SectionHeading } from "@/components/ui";
 import { accountability, stages } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Our Development Process",
+  title: "How It Works",
   description:
-    "The Adbyrd Development Framework: eight stages from discovery to ongoing partnership, with accountability and responsible agentic engineering built in.",
+    "How Adbyrd builds custom apps and AI receptionists for small businesses: free consultation, fixed-price proposal, build, launch, and support. Most projects launch in weeks.",
   alternates: { canonical: "/process" },
 };
 
@@ -24,9 +24,9 @@ export default function ProcessPage() {
   return (
     <>
       <PageHero
-        kicker="A Better Way to Build."
-        eyebrow="The Adbyrd Development Framework"
-        title="Big Ideas Need More Than Great Code. They Need a Plan."
+        kicker="Simple. Fixed Price. Fast."
+        eyebrow="How It Works"
+        title="From First Call to Launch in Weeks—With No Surprises."
         aside={
           <ol className="glass space-y-1 rounded-lg p-6">
             {stages.map((s, i) => (
@@ -45,24 +45,24 @@ export default function ProcessPage() {
         }
       >
         <p>
-          Every successful digital product begins with a clear understanding of what needs to be accomplished, why it
-          matters, and how success will be measured.
+          Working with a developer shouldn&apos;t feel like a gamble. You should know what you&apos;re getting, what it
+          costs, and when it will be ready—before you spend a dollar.
         </p>
         <p className="text-base text-white/65">
-          Our development approach brings strategy, design, engineering, testing, and ongoing improvement together into a
-          structured, collaborative process.
+          Our process is built for busy owners: a short conversation, a fixed-price proposal, regular check-ins, and a launch
+          you&apos;re ready for.
         </p>
         <p className="text-base text-white/65">
-          No unnecessary guesswork. No mysterious development black box. A clear path from concept to capability.
+          No jargon. No hourly billing surprises. No disappearing developer.
         </p>
         <div className="pt-4">
-          <Button href="/contact">Start With Discovery</Button>
+          <Button href="/contact">Book a Free Consultation</Button>
         </div>
       </PageHero>
 
-      {/* Eight stages — timeline */}
+      {/* Stages — timeline */}
       <section className="container-x py-20 lg:py-28">
-        <SectionHeading center eyebrow="The Eight Stages" title="A Clear Path From Concept to Capability." />
+        <SectionHeading center eyebrow="Five Simple Steps" title="What Working With Adbyrd Looks Like." />
         <ol className="relative mx-auto mt-16 max-w-5xl">
           <span className="absolute top-2 bottom-2 left-[23px] w-px bg-line md:left-1/2" aria-hidden="true" />
           {stages.map((s, i) => {
@@ -97,15 +97,15 @@ export default function ProcessPage() {
         <div className="container-x">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-end">
             <SectionHeading
-              eyebrow="Engineered for Accountability"
-              title="You Should Never Have to Wonder What's Happening With Your Project."
+              eyebrow="Our Promise"
+              title="You'll Always Know Where Your Project Stands."
             />
             <div className="space-y-3 text-lg leading-relaxed text-slate">
               <p>
-                A successful partnership requires more than technical talent. It requires consistent communication, clear
-                expectations, and an agreed definition of success.
+                Small businesses can&apos;t afford a project that drifts. We keep the scope tight, the price fixed, and you in
+                the loop.
               </p>
-              <p className="font-medium text-ink">Our delivery model is designed around visibility and shared accountability.</p>
+              <p className="font-medium text-ink">Clear expectations, written down, from day one.</p>
             </div>
           </div>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -134,26 +134,26 @@ export default function ProcessPage() {
             <div>
               <SectionHeading
                 light
-                eyebrow="Responsible Agentic Engineering"
-                title="Autonomy Without Oversight Isn't Innovation. It's Risk."
+                eyebrow="AI With Guardrails"
+                title="Your AI Works for You. Never Instead of You."
               />
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-white/75">
                 <p>
-                  AI agents introduce capabilities traditional applications were never designed to perform. They can select
-                  tools, process unstructured information, and execute sequences of actions.
+                  An AI receptionist talks to your customers, so it has to represent your business well. We set it up to
+                  handle routine questions and bookings, and to know when to hand things to you.
                 </p>
-                <p>That flexibility requires disciplined engineering.</p>
+                <p>You decide what it can and can&apos;t do.</p>
               </div>
             </div>
             <div className="flex flex-col justify-between gap-10">
               <ul className="grid gap-3 sm:grid-cols-2">
                 {[
-                  "Clear agent responsibilities",
-                  "Controlled permissions",
-                  "Human approval for sensitive actions",
-                  "Secure handling of business data",
-                  "Evaluation against defined tasks",
-                  "The ability to investigate failures",
+                  "Knows your services, hours, and prices",
+                  "Only does what you approve",
+                  "Sends unusual calls straight to you",
+                  "Protects your customers' information",
+                  "Tested on real call scenarios before launch",
+                  "Every call logged and summarized",
                 ].map((t) => (
                   <li key={t} className="glass rounded-lg px-5 py-4 text-sm font-medium">
                     {t}
@@ -161,9 +161,9 @@ export default function ProcessPage() {
                 ))}
               </ul>
               <div className="border-l-4 border-ember pl-6">
-                <p className="text-lg text-white/70">The goal isn&apos;t maximum autonomy.</p>
+                <p className="text-lg text-white/70">AI handles the routine.</p>
                 <p className="mt-1 font-display text-2xl font-semibold text-mist sm:text-3xl">
-                  It&apos;s the right level of autonomy for the job.
+                  You stay in charge of your business.
                 </p>
               </div>
             </div>
@@ -172,14 +172,13 @@ export default function ProcessPage() {
       </section>
 
       <CtaBand
-        title="From First Conversation to First Deployment. Know What Comes Next."
+        title="Ready When You Are."
         body={
           <p>
-            Whether your project is a new application, an automation initiative, or a sophisticated AI system, we&apos;ll help
-            identify a practical development path.
+            Start with a free consultation. If custom work makes sense, you&apos;ll get a fixed-price quote and a launch date.
           </p>
         }
-        primary={{ href: "/contact", label: "Discuss Your Project" }}
+        primary={{ href: "/contact", label: "Book a Free Consultation" }}
       />
     </>
   );
