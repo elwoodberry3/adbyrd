@@ -1,0 +1,1 @@
+# ADBYRD DOCX

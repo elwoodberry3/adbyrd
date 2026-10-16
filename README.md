@@ -1,48 +1,45 @@
-# Adbyrd — Smart Form Agentics VSL Landing Page
+# Adbyrd — 2027 Website
 
-Single-page, mobile-first VSL landing page with one call to action ("Book a free 15-min call"). Built for Next.js App Router + Tailwind CSS, deployable on Vercel as-is.
+Lightweight five-page marketing site for Adbyrd, built with **Next.js 16 (App Router)** and **Tailwind CSS 4**. All pages are statically prerendered; no images, databases or API keys required.
 
-## Files
+## Pages
 
-| File | Purpose |
+| Route | Page |
 | --- | --- |
-| `app/page.tsx` | The full landing page (server component, no client JS needed) |
-| `app/layout.tsx` | Root layout loading Inter via `next/font` per brand guidelines |
+| `/` | Home |
+| `/about` | About Adbyrd |
+| `/what-we-do` | What Adbyrd Can Do for You |
+| `/process` | Our Development Process |
+| `/contact` | Contact Adbyrd |
 
-## Setup (3 steps)
+## Run locally
 
-1. **Booking link** — In `app/page.tsx`, replace the `BOOKING_URL` constant with your real Calendly / Cal.com link. Every CTA on the page points to it.
-2. **Logo** — Drop `logo.png` (the master brand asset) into your project's `/public` folder.
-3. **Video embed** — In the hero, replace the placeholder play-button block (marked with a comment) with your Wistia / Vimeo / YouTube iframe:
-   ```tsx
-   <iframe src="https://..." className="absolute inset-0 h-full w-full" allowFullScreen />
-   ```
-
-## Tailwind font mapping
-
-The layout exposes Inter as a CSS variable. Map it to `font-sans`:
-
-**Tailwind v4** (in `globals.css`):
-```css
-@theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-}
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build check
 ```
 
-**Tailwind v3** (in `tailwind.config.ts`):
-```ts
-theme: {
-  extend: {
-    fontFamily: {
-      sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
-    },
-  },
-},
-```
+Requires Node.js 20.9 or newer.
 
-## Brand compliance notes
+## Deploy to Vercel
 
-- Colors are hard-coded to the brand guide: Byrd Gradient Orange `#FF6B00 → #E04A00` (sole accent + CTAs), Slate Charcoal `#5C646D` (body), Alpine White canvases, Obsidian Gray `#1A1D20` (dark CTA section). No competing secondary colors.
-- Headings use Inter SemiBold, sentence case, −1% tracking; eyebrows/labels are uppercase with +5% tracking — both per the typography architecture.
-- The logomark gradient is never flattened; the logo sits in generous clear space in the nav and footer.
-- Mobile-first: floating "agent activity" cards appear from `lg:` up; on phones they collapse into an inline stat strip under the video.
+1. Push this folder to a GitHub repository.
+2. In Vercel, choose **Add New → Project** and import the repo.
+3. Vercel detects Next.js automatically — keep the default settings and click **Deploy**.
+4. Add your domain (e.g. adbyrd.com) under **Project → Settings → Domains**.
+
+Or from the command line: `npx vercel` (preview) then `npx vercel --prod`.
+
+## Editing content
+
+All copy lives in `lib/content.ts` (capabilities, industries, services, engagement models, process stages, etc.). Page-specific headlines and paragraphs are in `app/**/page.tsx`.
+
+Brand colors and fonts are defined in the `@theme` block of `app/globals.css`.
+
+## Before launch
+
+- **Contact form** (`components/InquiryForm.tsx`) currently builds a project brief and copies it to the clipboard, as specified in the content doc. To receive inquiries, wire it to a Route Handler or a form service, and add consent/privacy text, spam protection, and an automated acknowledgment.
+- **Budget ranges** in `lib/content.ts` (`inquiryOptions.budget`) are placeholders — adjust to your real engagement sizes.
+- **Insights** cards are marked "Coming soon" because the articles aren't published yet.
+- Add contact email/phone to the footer and contact page once confirmed.
