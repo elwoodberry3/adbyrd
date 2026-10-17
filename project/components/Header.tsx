@@ -55,7 +55,7 @@ export default function Header() {
 
         <div className="hidden lg:block">
           <Button href="/contact" variant="dark">
-            Start Your Project
+            Get a Quote
           </Button>
         </div>
 
@@ -88,7 +88,7 @@ export default function Header() {
             ))}
             <li className="pt-3">
               <Button href="/contact" variant="dark">
-                Start Your Project
+                Get a Quote
               </Button>
             </li>
           </ul>

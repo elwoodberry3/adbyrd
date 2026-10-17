@@ -1,14 +1,14 @@
 import Link from "next/link";
-import { ArrowRight, Check, Inbox, Tags, Wrench, UserCheck, CircleCheckBig, Quote } from "lucide-react";
+import { ArrowRight, Check, PhoneIncoming, MessageSquareText, CalendarCheck, UserCheck, Smartphone, Quote, MapPin } from "lucide-react";
 import AICore from "@/components/AICore";
 import IndustryCarousel from "@/components/IndustryCarousel";
 import { ArchVisual, Button, CtaBand, Eyebrow, SectionHeading, icons } from "@/components/ui";
-import { approach, capabilities, insights } from "@/lib/content";
+import { approach, capabilities, caseStudies, faqs, insights, serviceAreas } from "@/lib/content";
 
 export default function Home() {
   return (
     <>
-      {/* 01 — Hero (Ref 002/003: dark split, glowing visual, glass cards) */}
+      {/* 01 — Hero */}
       <section className="px-3 pt-3 sm:px-5">
         <div className="relative overflow-hidden rounded-lg bg-night text-white">
           <div className="grid-fade pointer-events-none absolute inset-0" />
@@ -18,46 +18,52 @@ export default function Home() {
               <span className="glass mb-6 inline-block rounded-pill px-4 py-1.5 text-xs font-semibold tracking-wide text-mist">
                 Intelligence, Engineered.
               </span>
-              <Eyebrow light>Agentic AI &amp; Custom Software Development</Eyebrow>
+              <Eyebrow light>Custom Apps &amp; AI for Small Business · Western Michigan</Eyebrow>
               <h1 className="text-5xl leading-[1.02] font-semibold sm:text-6xl lg:text-7xl">
-                The Future Doesn&apos;t Build Itself.
-                <span className="mt-2 block text-cream">We Do.</span>
+                Custom Apps &amp; AI That Work as Hard as You Do.
+                <span className="mt-2 block text-cream">Built in Weeks. Fixed Price.</span>
               </h1>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/80">
-                Tomorrow&apos;s most competitive businesses won&apos;t simply use technology. They&apos;ll operate through
-                intelligent systems designed to think, act, adapt, and scale.
+                Adbyrd builds online booking and payment apps, iPhone apps, and AI phone receptionists for small businesses—typically
+                $3,000 to $7,500, quoted up front and delivered in weeks, not months.
               </p>
               <p className="mt-4 max-w-xl leading-relaxed text-white/65">
-                Adbyrd engineers custom applications, AI-powered workflows, and agentic systems that turn ambitious ideas
-                into measurable business capabilities.
+                Missing calls while you&apos;re on a job? Booking customers by text? Chasing payments? We build the one tool your
+                business actually needs—nothing more.
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
-                <Button href="/contact">Start Your Project</Button>
+                <Button href="/contact">Get a Fixed-Price Quote</Button>
                 <Button href="/what-we-do" variant="outline-light">
-                  Explore Our Capabilities
+                  See Services &amp; Pricing
                 </Button>
               </div>
-              <p className="mt-8 text-sm text-white/55">Based in Kalamazoo, Michigan. Built for businesses everywhere.</p>
+              <p className="mt-8 text-sm text-white/55">
+                Based in Kalamazoo. Serving {serviceAreas.slice(1, 4).join(", ")} &amp; small businesses nationwide.
+              </p>
             </div>
             <AICore />
           </div>
         </div>
       </section>
 
-      {/* Metric strip (Ref 002) */}
+      {/* Proof strip */}
       <section className="container-x py-10">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-          {["Strategy", "Design", "Engineering", "Deployment"].map((w, i) => (
-            <div key={w} className="flex items-center gap-3 rounded-lg bg-ivory px-4 py-4 ring-1 ring-line sm:gap-4 sm:px-6 sm:py-5">
-              <span className="font-display text-sm font-semibold text-steel">0{i + 1}</span>
-              <span className="font-display text-base font-semibold sm:text-lg">{w}.</span>
+          {[
+            { k: "$3K–$7.5K", v: "Typical project" },
+            { k: "Fixed", v: "Price, quoted up front" },
+            { k: "Weeks", v: "Not months" },
+            { k: "Up to 70%", v: "Faster iPhone builds" },
+          ].map((m) => (
+            <div key={m.k} className="flex flex-col rounded-lg bg-ivory px-4 py-4 ring-1 ring-line sm:px-6 sm:py-5">
+              <span className="font-display text-xl font-semibold sm:text-2xl">{m.k}</span>
+              <span className="text-sm text-slate">{m.v}</span>
             </div>
           ))}
         </div>
-        <p className="mt-4 text-center text-sm text-slate">One technology partner.</p>
       </section>
 
-      {/* 02 — Introduction (Ref 003 arch-framed imagery) */}
+      {/* 02 — Introduction */}
       <section className="container-x grid items-center gap-14 py-16 lg:grid-cols-[1fr_1.1fr] lg:py-24">
         <div className="relative mx-auto flex w-full max-w-md items-end gap-5">
           <ArchVisual variant="circuit" className="h-[360px] flex-1 sm:h-[440px]" />
@@ -65,32 +71,35 @@ export default function Home() {
         </div>
         <div>
           <SectionHeading
-            eyebrow="Beyond Traditional Software"
-            title="Your Business Has Ambition. We Build the Intelligence Behind It."
+            eyebrow="Built for Small Business"
+            title="Your Business Is One of a Kind. Your Tools Should Be Too."
           />
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate">
             <p>
-              The next generation of business technology does more than execute commands. It connects information,
-              orchestrates workflows, assists decisions, and performs complex tasks within clearly defined boundaries.
+              Off-the-shelf software is built for everyone, so it fits no one quite right. You end up working around it—or
+              doing the work by hand.
             </p>
             <p>
-              At Adbyrd, we combine thoughtful product strategy, modern software engineering, and agentic AI development to
-              create technology that works with your business—not against it.
+              Adbyrd builds small, focused tools around the way your business actually runs: a booking app that asks the right
+              questions, an AI receptionist that knows your services, an app with your name on it.
             </p>
-            <p>From the first prototype to production-scale infrastructure, we turn technical complexity into practical business advantage.</p>
+            <p>
+              We started as Western Michigan&apos;s SEO and digital marketing agency. Now we build the apps and AI that run small
+              businesses—and we still make sure customers can find you.
+            </p>
           </div>
           <div className="mt-8">
             <Button href="/about" variant="dark">
-              Discover Adbyrd
+              Meet Adbyrd
             </Button>
           </div>
         </div>
       </section>
 
-      {/* 03 — Capabilities (Ref 001 service card grid) */}
+      {/* 03 — Services */}
       <section className="bg-ivory py-20 lg:py-28">
         <div className="container-x">
-          <SectionHeading center eyebrow="What We Engineer" title="Intelligent Solutions. Real Business Impact." />
+          <SectionHeading center eyebrow="What We Build" title="Practical Tools. Real Results for Your Business." />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((c, i) => {
               const Icon = icons[c.icon];
@@ -117,37 +126,36 @@ export default function Home() {
           </div>
           <div className="mt-12 text-center">
             <Button href="/what-we-do" variant="dark">
-              Explore All Services
+              See Packages &amp; Pricing
             </Button>
           </div>
         </div>
       </section>
 
-      {/* 04 — Agentic Technology */}
+      {/* 04 — AI receptionist spotlight */}
       <section className="px-3 py-3 sm:px-5">
         <div className="relative overflow-hidden rounded-lg bg-ink text-white">
           <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-mist/15 blur-[130px]" />
           <div className="container-x relative grid items-center gap-14 py-20 lg:grid-cols-2 lg:py-28">
             <div>
-              <SectionHeading light eyebrow="The Agentic Advantage" title="Software That Doesn't Just Respond. It Gets Work Done." />
+              <SectionHeading light eyebrow="AI That Gets Work Done" title="Never Miss Another Call. Never Lose Another Job." />
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-white/75">
                 <p>
-                  Traditional software waits for instructions. Agentic systems can pursue defined goals, coordinate approved
-                  tools, and complete complex workflows while keeping people in control of critical decisions.
+                  When you&apos;re under a sink, behind the wheel, or with a client, the phone keeps ringing. Every missed call is
+                  a customer who might call your competitor next.
                 </p>
                 <p className="text-white/60">
-                  Imagine a business where incoming requests are classified automatically, information moves securely between
-                  systems, routine processes execute with minimal intervention, and your team focuses on the work that
-                  requires human judgment.
+                  An Adbyrd AI receptionist answers in a natural voice, knows your services and prices, books the job, and
+                  sends you a summary. Anything unusual comes straight to you.
                 </p>
-                <p className="font-display font-semibold text-mist">That&apos;s the opportunity we&apos;re engineering.</p>
+                <p className="font-display font-semibold text-mist">AI handles the routine. You stay in charge.</p>
               </div>
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {[
-                  "Reduce repetitive administrative work",
-                  "Connect disconnected business systems",
-                  "Accelerate service and operational workflows",
-                  "Maintain human approvals and operational visibility",
+                  "Answers calls 24/7, including after hours",
+                  "Books appointments and pickups",
+                  "Texts you every call summary",
+                  "Hands sensitive calls back to you",
                 ].map((b) => (
                   <li key={b} className="glass flex items-start gap-3 rounded-lg p-4 text-sm">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-mist" strokeWidth={3} />
@@ -156,20 +164,20 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-9">
-                <Button href="/what-we-do#agentic">Explore Agentic Development</Button>
+                <Button href="/what-we-do#ai-receptionist">Explore the AI Receptionist</Button>
               </div>
             </div>
 
-            {/* Illustrative agent workflow */}
-            <div className="glass relative rounded-lg p-6 sm:p-8" aria-label="Example agentic workflow">
-              <p className="text-xs font-semibold tracking-[0.18em] text-white/50 uppercase">Example agentic workflow</p>
+            {/* Illustrative call flow */}
+            <div className="glass relative rounded-lg p-6 sm:p-8" aria-label="Example AI receptionist call">
+              <p className="text-xs font-semibold tracking-[0.18em] text-white/50 uppercase">Example: a call at 7:40 pm</p>
               <ol className="mt-6 space-y-3">
                 {[
-                  { icon: Inbox, t: "Incoming request received", s: "Email, form, or ticket" },
-                  { icon: Tags, t: "Classified automatically", s: "Intent and priority identified" },
-                  { icon: Wrench, t: "Approved tools coordinated", s: "CRM, documents, internal systems" },
-                  { icon: UserCheck, t: "Human approval", s: "Sensitive actions stay with your team", highlight: true },
-                  { icon: CircleCheckBig, t: "Work completed & logged", s: "Full operational visibility" },
+                  { icon: PhoneIncoming, t: "Customer calls your business", s: "You're finishing a job across town" },
+                  { icon: MessageSquareText, t: "AI receptionist answers", s: "Explains services, pricing, availability" },
+                  { icon: CalendarCheck, t: "Job booked", s: "Details captured, confirmation sent" },
+                  { icon: UserCheck, t: "Unusual request?", s: "Routed straight to you", highlight: true },
+                  { icon: Smartphone, t: "Summary on your phone", s: "Caller, need, and next step—by text" },
                 ].map((step, i, arr) => (
                   <li key={step.t} className="relative flex gap-4">
                     {i < arr.length - 1 && <span className="absolute top-12 left-[22px] h-[calc(100%-28px)] w-px bg-white/15" />}
@@ -192,26 +200,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 05 — Industries (Ref 003 pills + Ref 001 featured carousel) */}
+      {/* 05 — Client stories */}
       <section className="container-x py-20 lg:py-28">
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <SectionHeading eyebrow="Built for Business" title="Across Industries. Beyond Limitations." />
-          <p className="max-w-sm text-slate">
-            Different industries. Different challenges. One principle: technology should create measurable value.
-          </p>
-        </div>
-        <div className="mt-12">
-          <IndustryCarousel />
+        <SectionHeading eyebrow="Recent Work" title="Built for Real Small Businesses." />
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          {caseStudies.map((c) => (
+            <article key={c.client} className="flex flex-col rounded-lg bg-white p-8 ring-1 ring-line sm:p-10">
+              <p className="text-xs font-semibold tracking-[0.16em] text-steel uppercase">{c.label}</p>
+              <h3 className="mt-3 text-2xl font-semibold">{c.client}</h3>
+              <dl className="mt-6 flex-1 space-y-5 leading-relaxed">
+                <div>
+                  <dt className="text-sm font-semibold text-ink">The problem</dt>
+                  <dd className="mt-1 text-slate">{c.problem}</dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-semibold text-ink">What we built</dt>
+                  <dd className="mt-1 text-slate">{c.built}</dd>
+                </div>
+              </dl>
+              <p className="mt-6 border-l-4 border-ember pl-5 font-display text-lg leading-snug font-semibold text-night">
+                {c.result}
+              </p>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* 06 — Approach (Ref 003 numbered step process) */}
+      {/* 06 — Industries */}
+      <section className="bg-ivory py-20 lg:py-28">
+        <div className="container-x">
+          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <SectionHeading eyebrow="Who We Help" title="Built for the Businesses That Keep Main Street Running." />
+            <p className="max-w-sm text-slate">
+              Different businesses, same problems: missed calls, manual booking, and hours lost to busywork.
+            </p>
+          </div>
+          <div className="mt-12">
+            <IndustryCarousel />
+          </div>
+        </div>
+      </section>
+
+      {/* 07 — How it works */}
       <section className="bg-fog py-20 lg:py-28">
         <div className="container-x">
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-            <SectionHeading eyebrow="From Vision to Execution" title="Complex Technology. A Clear Path Forward." />
+            <SectionHeading eyebrow="How It Works" title="Simple Process. Fixed Price. Fast Launch." />
             <Button href="/process" variant="dark">
-              See Our Development Process
+              See How We Work
             </Button>
           </div>
           <div className="relative mt-16">
@@ -241,30 +277,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 07 — Differentiation (Ref 001 quote banner) */}
+      {/* 08 — Differentiation */}
       <section className="container-x py-20 lg:py-28">
         <div className="relative mx-auto max-w-4xl rounded-lg bg-ivory p-8 ring-1 ring-line sm:p-14">
           <Quote className="absolute -top-6 left-8 h-12 w-12 rounded-lg bg-ember p-3 text-night sm:left-14" />
-          <h2 className="text-3xl font-semibold sm:text-4xl">Not Another Vendor. Your Technology Partner.</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl">Big-Company Technology. Small-Business Price.</h2>
           <p className="mt-6 text-lg leading-relaxed text-slate">
-            You don&apos;t need another company selling software you don&apos;t understand. You need engineers who understand the
-            business problem, challenge assumptions, explain trade-offs, and take responsibility for the work.
+            You shouldn&apos;t need an enterprise budget to get software built around your business. AI-assisted development lets
+            us build in weeks what used to take months—and pass that speed on to you as a fixed, affordable price.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-slate">
-            At Adbyrd, we bring product thinking, engineering discipline, and practical AI expertise together under one
-            collaborative development approach.
+            You work directly with the people building your app, in plain English, from first call to launch.
           </p>
           <p className="mt-8 border-l-4 border-ember pl-5 font-display text-xl leading-snug font-semibold text-night">
-            No unnecessary complexity. No technology for technology&apos;s sake. Just purposeful systems built to solve
-            meaningful problems.
+            No jargon. No surprise invoices. No technology you don&apos;t need.
           </p>
         </div>
       </section>
 
-      {/* 08 — Insights (Ref 001 3-column blog grid) */}
-      <section className="bg-ivory py-20 lg:py-28">
+      {/* 09 — FAQ (also emitted as FAQPage structured data) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }),
+        }}
+      />
+      <section id="faq" className="bg-ivory py-20 lg:py-28">
+        <div className="container-x grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <SectionHeading eyebrow="Questions" title="Straight Answers for Small Business Owners." />
+            <p className="mt-6 flex items-start gap-2 text-slate">
+              <MapPin className="mt-1 h-4 w-4 shrink-0 text-steel" />
+              Serving {serviceAreas.join(", ")} and small businesses across the U.S.
+            </p>
+          </div>
+          <div className="divide-y divide-line rounded-lg bg-white ring-1 ring-line">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-6 sm:p-7">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-lg font-semibold">
+                  {f.q}
+                  <span className="mt-1 text-steel transition-transform group-open:rotate-45" aria-hidden="true">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-3 leading-relaxed text-slate">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 10 — Insights */}
+      <section className="py-20 lg:py-28">
         <div className="container-x">
-          <SectionHeading center eyebrow="Perspectives From a Changing Industry" title="Ideas Worth Building On." />
+          <SectionHeading center eyebrow="Guides for Owners" title="Know Before You Build." />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {insights.map((post, i) => (
               <article key={post.title} className="overflow-hidden rounded-lg bg-white ring-1 ring-line">
@@ -285,18 +359,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 09 — Final CTA */}
+      {/* 11 — Final CTA */}
       <div className="pt-3">
         <CtaBand
-          title="Your Next Competitive Advantage Starts With a Conversation."
+          title="Tell Us What's Slowing Your Business Down."
           body={
             <p>
-              Whether you&apos;re exploring an idea, modernizing existing technology, or preparing to deploy your first AI agent,
-              Adbyrd can help define the right next step.
+              Missed calls, manual booking, or an app idea you&apos;ve been sitting on—start with a free conversation and get a
+              fixed-price quote if custom work makes sense.
             </p>
           }
-          primary={{ href: "/contact", label: "Schedule a Consultation" }}
-          secondary={{ href: "/contact#inquiry", label: "Tell Us About Your Project" }}
+          primary={{ href: "/contact", label: "Get a Fixed-Price Quote" }}
+          secondary={{ href: "/contact#inquiry", label: "Tell Us About Your Business" }}
         />
       </div>
     </>

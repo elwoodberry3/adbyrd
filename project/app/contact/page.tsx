@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Building2, Lightbulb, Mail, MapPin, Phone, Rocket, Settings2, Users } from "lucide-react";
+import { Building2, Mail, MapPin, Phone, Rocket, Settings2, Users } from "lucide-react";
 import InquiryForm from "@/components/InquiryForm";
 import { ArchVisual, Button, CtaBand, PageHero, SectionHeading } from "@/components/ui";
-import { nextSteps } from "@/lib/content";
+import { nextSteps, serviceAreas } from "@/lib/content";
 import { contact, gbp } from "@/lib/site-config";
 import SocialLinks from "@/components/SocialLinks";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Planning a new digital product, exploring agentic AI, or modernizing existing software? Tell Adbyrd what you're working on.",
+    "Get a free consultation and fixed-price quote for a custom app, booking system, iPhone app, or AI phone receptionist. Adbyrd is based in Kalamazoo, Michigan.",
   alternates: { canonical: "/contact" },
 };
 
@@ -17,9 +17,9 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        kicker="Let's Build What's Next."
-        eyebrow="Start a Conversation"
-        title="Have a Challenge Worth Solving? We'd Like to Hear About It."
+        kicker="Free Consultation. Fixed-Price Quote."
+        eyebrow="Get a Quote"
+        title="What's Costing Your Business Time or Customers?"
         aside={
           <div className="glass mx-auto max-w-sm rounded-lg p-7">
             <p className="text-xs font-semibold tracking-[0.18em] text-mist uppercase">What happens next</p>
@@ -37,22 +37,21 @@ export default function ContactPage() {
         }
       >
         <p>
-          Whether you&apos;re planning a new digital product, exploring agentic AI, modernizing existing software, or trying to
-          eliminate an expensive operational bottleneck, the right conversation can help clarify what comes next.
+          Missed calls, booking by text, chasing payments, or an app idea you&apos;ve been sitting on—tell us what&apos;s
+          going on and we&apos;ll tell you the simplest way to fix it.
         </p>
         <p className="text-base text-white/65">
-          Tell us what you&apos;re working on. We&apos;ll explore the challenge, ask the right questions, and determine whether
-          Adbyrd is the right technology partner.
+          Most projects cost $3,000 to $7,500 as a fixed price. If you don&apos;t need custom software, we&apos;ll say so.
         </p>
         <div className="pt-4">
-          <Button href="#inquiry">Tell Us About Your Project</Button>
+          <Button href="#inquiry">Tell Us About Your Business</Button>
         </div>
       </PageHero>
 
       {/* Form + What Happens Next (Ref 001 contact details + form) */}
       <section id="inquiry" className="container-x scroll-mt-24 grid gap-10 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:py-28">
         <div>
-          <SectionHeading eyebrow="What Happens Next?" title="A Straightforward Start. No Unnecessary Complexity." />
+          <SectionHeading eyebrow="What Happens Next?" title="A Simple Start. No Pressure." />
           <ol className="mt-10 space-y-4">
             {nextSteps.map((s, i) => (
               <li key={s.title} className="flex gap-5 rounded-lg bg-ivory p-6 ring-1 ring-line">
@@ -94,16 +93,16 @@ export default function ContactPage() {
         <div className="container-x">
           <SectionHeading
             center
-            eyebrow="Who Should Reach Out?"
-            title="From First-Time Founders to Established Technology Teams."
+            eyebrow="Who We Help"
+            title="Small Businesses Ready to Work Smarter."
           />
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {[
-              { icon: Rocket, t: "Entrepreneurs bringing new products to market" },
-              { icon: Lightbulb, t: "Business leaders exploring AI" },
-              { icon: Building2, t: "Companies with outdated systems" },
-              { icon: Settings2, t: "Organizations pursuing automation" },
-              { icon: Users, t: "Technical teams that need specialized engineering expertise" },
+              { icon: Phone, t: "Owner-operators missing calls while they work" },
+              { icon: Settings2, t: "Service businesses booking by phone and text" },
+              { icon: Rocket, t: "Owners with an app idea for their customers" },
+              { icon: Building2, t: "Businesses launching a new service or direction" },
+              { icon: Users, t: "Small teams buried in repetitive admin work" },
             ].map(({ icon: Icon, t }) => (
               <div key={t} className="rounded-lg bg-white p-6 ring-1 ring-line">
                 <Icon className="h-6 w-6 text-steel" />
@@ -112,8 +111,8 @@ export default function ContactPage() {
             ))}
           </div>
           <div className="mx-auto mt-14 max-w-2xl text-center">
-            <p className="text-lg text-slate">You don&apos;t need to know exactly what technology to use.</p>
-            <p className="mt-2 font-display text-2xl font-semibold">You need to know what you&apos;re trying to accomplish.</p>
+            <p className="text-lg text-slate">You don&apos;t need to know anything about technology.</p>
+            <p className="mt-2 font-display text-2xl font-semibold">You just need to know what&apos;s slowing you down.</p>
             <p className="mt-2 font-display text-2xl font-semibold text-steel">We&apos;ll start there.</p>
           </div>
         </div>
@@ -122,14 +121,14 @@ export default function ContactPage() {
       {/* Location */}
       <section className="container-x grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
         <div>
-          <SectionHeading eyebrow="Location" title="Rooted in Kalamazoo. Connected to What's Next." />
+          <SectionHeading eyebrow="Location" title="Rooted in Kalamazoo. Serving Western Michigan." />
           <p className="mt-6 text-lg leading-relaxed text-slate">
-            Adbyrd is proud to contribute to Western Michigan&apos;s evolving technology and entrepreneurial ecosystem while
-            collaborating with businesses beyond the region.
+            Adbyrd works with small businesses across {serviceAreas.join(", ")}—and builds for owners across the U.S.
+            who want a local-feeling partner without the big-agency price.
           </p>
           <div className="mt-8">
             <Button href="#inquiry" variant="dark">
-              Connect With Our Team
+              Get a Fixed-Price Quote
             </Button>
           </div>
         </div>
@@ -144,7 +143,7 @@ export default function ContactPage() {
                 <p className="font-display text-3xl font-semibold">
                   {contact.city}, {contact.region} {contact.postalCode}
                 </p>
-                <p className="mt-6 text-white/60">Built for businesses everywhere.</p>
+                <p className="mt-6 text-white/60">Serving Western Michigan and small businesses nationwide.</p>
                 <a
                   href={gbp.directionsUrl}
                   target="_blank"
@@ -162,14 +161,13 @@ export default function ContactPage() {
       </section>
 
       <CtaBand
-        title="The Next Version of Your Business Starts With an Idea."
+        title="Your Next Customer Might Be Calling Right Now."
         body={
           <>
-            <p>It doesn&apos;t have to be perfectly defined.</p>
-            <p>It just has to be worth exploring.</p>
+            <p>Let&apos;s make sure someone answers.</p>
           </>
         }
-        primary={{ href: "/contact#inquiry", label: "Start the Conversation" }}
+        primary={{ href: "/contact#inquiry", label: "Get a Fixed-Price Quote" }}
       />
     </>
   );

@@ -16,10 +16,10 @@ export default function Footer() {
             <Logo withText />
           </Link>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-slate">
-            Strategy. Design. Engineering. Deployment. One technology partner.
+            Custom apps, booking systems, and AI phone receptionists for small businesses. Fixed price, built in weeks.
           </p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate">
-            A majority woman-of-color-owned agentic development firm.
+            A majority woman-of-color-owned firm in Kalamazoo, Michigan.
           </p>
           <SocialLinks className="mt-6" placement="footer" />
         </div>
@@ -32,7 +32,7 @@ export default function Footer() {
           ))}
         </FooterCol>
 
-        <FooterCol title="Capabilities">
+        <FooterCol title="Services">
           {capabilities.map((c) => (
             <FooterLink key={c.anchor} href={`/what-we-do#${c.anchor}`}>
               {c.title}
@@ -80,10 +80,10 @@ export default function Footer() {
           <li className="pt-2">
             <Link
               href="/contact"
-              data-cta="Connect With Our Team"
+              data-cta="Get a Fixed-Price Quote"
               className="inline-flex rounded-pill bg-night px-4 py-2.5 text-sm font-semibold text-white hover:bg-night-2"
             >
-              Connect With Our Team
+              Get a Fixed-Price Quote
             </Link>
           </li>
           {gbp.reviewUrl && (

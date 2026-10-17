@@ -1,4 +1,4 @@
-import { site } from "@/lib/content";
+import { engagements, serviceAreas, services, site } from "@/lib/content";
 import { SITE_URL, contact, gbp, socials } from "@/lib/site-config";
 
 /**
@@ -55,16 +55,38 @@ export default function StructuredData() {
         address,
         geo: { "@type": "GeoCoordinates", latitude: contact.geo.lat, longitude: contact.geo.lng },
         hasMap: gbp.directionsUrl,
-        areaServed: [{ "@type": "Country", name: "United States" }],
-        priceRange: "$$$",
+        areaServed: [
+          ...serviceAreas.map((name) => ({
+            "@type": "City",
+            name,
+            containedInPlace: { "@type": "State", name: "Michigan" },
+          })),
+          { "@type": "Country", name: "United States" },
+        ],
+        priceRange: "$$",
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Small business packages",
+          itemListElement: engagements
+            .filter((e) => e.price.includes("$"))
+            .map((e) => ({
+              "@type": "Offer",
+              name: e.name,
+              description: e.deliverable,
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                priceCurrency: "USD",
+                minPrice: Number(e.price.replace(/[^0-9–-]/g, "").split(/[–-]/)[0]),
+              },
+            })),
+        },
         // openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "09:00", closes: "17:00" }],
         knowsAbout: [
-          "Agentic AI development",
-          "Custom software development",
-          "Business process automation",
-          "AI integration",
-          "Product strategy and UX design",
-          "Managed AI operations",
+          ...services.map((s) => s.eyebrow),
+          "Small business app development",
+          "AI voice agents",
+          "Online booking and payment systems",
+          "Local SEO and generative engine optimization",
         ],
         sameAs,
       },

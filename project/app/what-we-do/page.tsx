@@ -5,9 +5,9 @@ import { ArchVisual, Button, CtaBand, PageHero, SectionHeading, icons } from "@/
 import { engagements, services } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "What We Do",
+  title: "Services & Pricing",
   description:
-    "Agentic AI development, custom software, business process automation, AI integration and modernization, product strategy and UX, and managed AI operations.",
+    "Fixed-price AI phone receptionists, online booking and payment apps, iPhone apps, and workflow automation for small businesses in Kalamazoo and Western Michigan. Most projects $3,000–$7,500.",
   alternates: { canonical: "/what-we-do" },
 };
 
@@ -17,9 +17,9 @@ export default function WhatWeDoPage() {
   return (
     <>
       <PageHero
-        kicker="Your Vision. Engineered Into Reality."
-        eyebrow="Our Services & Capabilities"
-        title="Whatever Your Business Needs Next, Let's Build It."
+        kicker="Fixed Price. Built in Weeks."
+        eyebrow="Services & Pricing"
+        title="The Right Tool for Your Business, at a Price You Know Up Front."
         aside={
           <div className="mx-auto max-w-[420px]">
             <AICore showCards={false} />
@@ -27,18 +27,18 @@ export default function WhatWeDoPage() {
         }
       >
         <p>
-          A new digital product. An intelligent business assistant. A custom application. A workflow that practically runs
-          itself.
+          An AI receptionist that answers every call. A booking app customers actually use. Your own iPhone app. Busywork
+          that runs itself.
         </p>
         <p className="text-base text-white/65">
-          Whatever the challenge, Adbyrd combines strategic thinking and technical execution to transform your ideas into
-          functional, connected, and scalable technology.
+          Most small-business projects cost $3,000 to $7,500, quoted as a fixed price before we start and delivered in
+          weeks, not months.
         </p>
-        <p className="font-display font-semibold text-mist">You bring the business vision. We help engineer the solution.</p>
+        <p className="font-display font-semibold text-mist">You know your business. We build the tool that fits it.</p>
         <div className="flex flex-wrap gap-3 pt-4">
-          <Button href="/contact">Discuss Your Project</Button>
+          <Button href="/contact">Get a Fixed-Price Quote</Button>
           <Button href="/process" variant="outline-light">
-            Explore Our Process
+            See How It Works
           </Button>
         </div>
       </PageHero>
@@ -75,11 +75,12 @@ export default function WhatWeDoPage() {
               className="scroll-mt-24 grid overflow-hidden rounded-lg bg-white ring-1 ring-line lg:grid-cols-[1.35fr_1fr]"
             >
               <div className={`p-8 sm:p-12 ${flip ? "lg:order-2" : ""}`}>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <span className="grid h-12 w-12 place-items-center rounded-lg bg-fog text-night">
                     <Icon className="h-6 w-6" />
                   </span>
                   <p className="text-xs font-semibold tracking-[0.18em] text-steel uppercase">{s.eyebrow}</p>
+                  <span className="rounded-pill bg-ember px-3 py-1 text-xs font-semibold text-ink">{s.priceFrom}</span>
                 </div>
                 <h2 className="mt-6 text-3xl leading-tight font-semibold sm:text-4xl">{s.title}</h2>
                 <div className="mt-5 space-y-3 leading-relaxed text-slate">
@@ -119,10 +120,10 @@ export default function WhatWeDoPage() {
       {/* Engagement models (Ref 002 vertical table/cards) */}
       <section className="bg-ivory py-20 lg:py-28">
         <div className="container-x">
-          <SectionHeading center eyebrow="How We Can Work Together" title="The Right Engagement for the Right Challenge." />
+          <SectionHeading center eyebrow="Packages" title="Clear Packages. Fixed Prices." />
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {engagements.map((e) => {
-              const featured = e.name === "Agentic Transformation";
+              const featured = e.name === "Booking & Payments App";
               return (
                 <div
                   key={e.name}
@@ -132,10 +133,12 @@ export default function WhatWeDoPage() {
                 >
                   {featured && (
                     <span className="absolute top-6 right-6 rounded-pill bg-ember px-3 py-1 text-xs font-semibold text-ink">
-                      Agentic focus
+                      Most popular
                     </span>
                   )}
                   <h3 className="pr-24 text-2xl font-semibold">{e.name}</h3>
+                  <p className="mt-3 font-display text-3xl font-semibold">{e.price}</p>
+                  <p className={`mt-1 text-sm ${featured ? "text-white/60" : "text-slate"}`}>{e.timeline}</p>
                   <div className={`my-6 h-px ${featured ? "bg-white/15" : "bg-line"}`} />
                   <p className={`text-xs font-semibold tracking-[0.16em] uppercase ${featured ? "text-mist" : "text-steel"}`}>
                     Ideal for
@@ -150,7 +153,7 @@ export default function WhatWeDoPage() {
                   </p>
                   <div className="mt-8">
                     <Button href="/contact" variant={featured ? "ember" : "outline"}>
-                      Discuss This Engagement
+                      Get a Quote
                     </Button>
                   </div>
                 </div>
@@ -162,17 +165,17 @@ export default function WhatWeDoPage() {
 
       <div className="pt-3">
         <CtaBand
-          title="Let's Turn Your Next Big Challenge Into Your Next Big Capability."
+          title="Not Sure Which Package Fits?"
           body={
             <>
-              <p>You don&apos;t need to arrive with technical specifications or a fully developed product plan.</p>
+              <p>You don&apos;t need technical details or a plan—just tell us what&apos;s costing you time or customers.</p>
               <p className="text-base text-white/55">
-                Tell us what you&apos;re trying to accomplish. We&apos;ll help you understand what is possible, what makes
-                business sense, and what it could take to build.
+                We&apos;ll recommend the simplest option that works and give you a fixed price. Prices shown are starting
+                points; your quote is based on exactly what you need.
               </p>
             </>
           }
-          primary={{ href: "/contact", label: "Start a Project Conversation" }}
+          primary={{ href: "/contact", label: "Get a Fixed-Price Quote" }}
         />
       </div>
     </>

@@ -200,8 +200,8 @@ export default function AICore({ showCards = true }: { showCards?: boolean }) {
             <Bot className="h-5 w-5" />
           </span>
           <div>
-            <p className="text-[11px] tracking-wider text-white/60 uppercase">Capability</p>
-            <p className="text-sm font-semibold">Agentic AI Development</p>
+            <p className="text-[11px] tracking-wider text-white/60 uppercase">Answering now</p>
+            <p className="text-sm font-semibold">AI Phone Receptionist</p>
           </div>
         </div>
       </ScanCard>
@@ -209,9 +209,9 @@ export default function AICore({ showCards = true }: { showCards?: boolean }) {
       <ScanCard className="sm:right-0 sm:bottom-[2%] sm:max-w-[220px]" delay="1.2s">
         <div className="mb-2 flex items-center gap-2 text-mist">
           <ShieldCheck className="h-4 w-4" />
-          <span className="text-[11px] font-semibold tracking-wider uppercase">Human oversight</span>
+          <span className="text-[11px] font-semibold tracking-wider uppercase">You stay in charge</span>
         </div>
-        <p className="text-sm leading-snug text-white/85">Maintain human approvals and operational visibility.</p>
+        <p className="text-sm leading-snug text-white/85">Unusual calls go straight to you, with a text summary.</p>
       </ScanCard>
 
       <ScanCard className="sm:bottom-[10%] sm:left-0" delay="2.4s" pill>
