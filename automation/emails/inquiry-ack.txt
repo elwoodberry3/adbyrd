@@ -1,0 +1,35 @@
+INQUIRY RECEIVED
+
+Thanks, {{firstName}}. We got it.
+
+Your project inquiry is in. A real person at Adbyrd will read it and reply within one business day. Here's a copy of what you sent.
+
+{{recapText}}
+
+Your message:
+{{projectText}}
+
+------------------------------------------------------------
+WHAT HAPPENS NEXT
+
+{{nextStepsText}}
+
+------------------------------------------------------------
+NEED US SOONER?
+
+Call {{phoneDisplay}}
+Email {{supportEmail}}
+{{addressOneLine}}
+
+Or just reply to this email. It goes straight to our team.
+
+------------------------------------------------------------
+Follow Adbyrd
+{{socialText}}
+
+You're getting this one-time confirmation because you sent a project inquiry at adbyrd.com.
+Reference: {{submissionId}}
+
+{{legalText}}
+
+(c) {{year}} Adbyrd · {{addressOneLine}}

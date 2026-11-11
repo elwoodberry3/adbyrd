@@ -367,4 +367,4 @@ export const inquiryOptions = {
   ],
   stage: ["Just exploring", "I know the problem, not the solution", "I know what I want built", "Ready to start soon"],
   budget: ["Not sure yet", "Under $3,000", "$3,000 – $5,000", "$5,000 – $7,500", "$7,500+"],
-};
+} as const;

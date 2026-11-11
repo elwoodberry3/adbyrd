@@ -67,6 +67,7 @@ export const legalDocs: LegalDoc[] = [
         body: ["[CONFIRM] We share personal information with:"],
         list: [
           "Service providers (hosting, analytics, CRM, email, and communications) under contract.",
+          "[COUNSEL TO CONFIRM] When you send a project inquiry, the details you enter (name, business, email, project description, and the marketing source of your visit) are processed by: Vercel (website hosting), n8n (workflow automation that routes the inquiry), HubSpot (our CRM, where your contact record and inquiry are stored), and Resend (email delivery for your confirmation and our internal notification). [CONFIRM processor locations, DPAs, and retention before launch.]",
           "Advertising and analytics partners, subject to your choices.",
           "Professional advisers, and authorities where required by law.",
           "A successor entity in the event of a merger, acquisition, or asset sale.",
