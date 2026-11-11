@@ -1,0 +1,20 @@
+NEW WEBSITE INQUIRY: {{name}}
+
+Hit Reply to answer {{name}} directly at {{email}}.
+
+{{crmText}}
+
+{{fieldsText}}
+
+Message:
+{{projectText}}
+
+------------------------------------------------------------
+WHERE THEY CAME FROM
+
+{{attributionText}}
+
+------------------------------------------------------------
+{{metaText}}
+
+Sent by the n8n workflow "Adbyrd – Website Inquiry" for {{siteUrl}}. Internal use only.

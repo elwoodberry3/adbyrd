@@ -1,6 +1,6 @@
 # Adbyrd — 2027 Website
 
-Marketing site for Adbyrd, built with **Next.js 16 (App Router)** and **Tailwind CSS 4**. Every page is prerendered as static HTML. Tracking tags stay off until their environment variables are set.
+Marketing site for Adbyrd, built with **Next.js 16 (App Router)** and **Tailwind CSS 4**. Every page is prerendered as static HTML. The one dynamic route is `/api/inquiry`, which validates the contact form and forwards it to n8n. Tracking tags stay off until their environment variables are set.
 
 ## Pages
 
@@ -23,9 +23,13 @@ npm install
 cp .env.example .env.local   # optional — add tracking IDs
 npm run dev                  # http://localhost:3000
 npm run build
+npm run typecheck            # also `npm run lint` (an alias; ESLint isn't set up yet)
+npm test                     # Vitest: schema, /api/inquiry, email rendering, n8n workflow
 ```
 
-Requires Node.js 20.9 or newer.
+Requires Node.js 22.18 or newer.
+
+To try the form end to end locally, run `npm run mock:n8n` in a second terminal and set `N8N_WEBHOOK_URL=http://localhost:5678/webhook/adbyrd-inquiry` and `N8N_WEBHOOK_SECRET=dev-secret` in `.env.local`. Email previews: `npm run emails:preview`.
 
 ## Deploy to Vercel
 
@@ -43,11 +47,14 @@ Requires Node.js 20.9 or newer.
 - **Brand:** the palette and radii (pills 7px, cards 0.5rem) are in the `@theme` block of `app/globals.css`. Logos are in `public/brand/`.
 - **Sentinel hero:** `components/AICore.tsx`. It's an SVG and CSS animation.
 - **Measurement:** `components/analytics/*`. See **docs/TRACKING.md** for the event list, UTM conventions and launch checklist.
+- **Inquiry pipeline:** `components/InquiryForm.tsx` → `app/api/inquiry/route.ts` (validation in `lib/inquiry-schema.ts`) → n8n. The workflow, email templates and HubSpot setup live in `../automation/`. See **../automation/README.md**.
+- **Email images:** `public/email/` (served at `/email/*` for the transactional emails).
 
 ## Before launch
 
 - Have counsel complete and approve every `/legal` page. Replace all `[BRACKETED]` items.
-- Wire the inquiry form (`components/InquiryForm.tsx`) to a CRM or backend. Right now it copies a brief to the clipboard and fires `generate_lead`. Pass `getAttribution()` along so each lead keeps its source.
+- Finish the inquiry pipeline setup in `../automation/README.md` (Resend domain, HubSpot private app + properties script, n8n credentials + Config node, Vercel env vars), then run its end-to-end checklist. The form already sends `getAttribution()` with every inquiry.
+- Decide whether to turn on Cloudflare Turnstile (`NEXT_PUBLIC_TURNSTILE_SITE_KEY` + `TURNSTILE_SECRET_KEY`). If you do, add `challenges.cloudflare.com` to the CSP.
 - Set the geo pin and opening hours in `lib/site-config.ts` / `components/StructuredData.tsx` to match the Google Business Profile.
 - Replace the placeholder budget ranges in `lib/content.ts`.
 - Add a Content-Security-Policy in `next.config.mjs` once the tag list is final.

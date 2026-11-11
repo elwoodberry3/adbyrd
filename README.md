@@ -1,6 +1,6 @@
 # Adbyrd — 2027 Website
 
-Lightweight five-page marketing site for Adbyrd, built with **Next.js 16 (App Router)** and **Tailwind CSS 4**. All pages are statically prerendered; no images, databases or API keys required.
+Lightweight five-page marketing site for Adbyrd, built with **Next.js 16 (App Router)** and **Tailwind CSS 4**. All pages are statically prerendered. The only server code is `/api/inquiry`, which forwards the contact form to n8n (see [`automation/README.md`](automation/README.md)).
 
 ## Pages
 
@@ -20,7 +20,7 @@ npm run dev        # http://localhost:3000
 npm run build      # production build check
 ```
 
-Requires Node.js 20.9 or newer.
+Requires Node.js 22.18 or newer (the automation scripts load `lib/*.ts` directly).
 
 ## Deploy to Vercel
 
@@ -39,7 +39,7 @@ Brand colors and fonts are defined in the `@theme` block of `app/globals.css`.
 
 ## Before launch
 
-- **Contact form** (`components/InquiryForm.tsx`) currently builds a project brief and copies it to the clipboard, as specified in the content doc. To receive inquiries, wire it to a Route Handler or a form service, and add consent/privacy text, spam protection, and an automated acknowledgment.
+- **Inquiry pipeline:** the contact form now posts to `/api/inquiry`, which hands off to n8n → HubSpot + Resend. Before launch, finish the manual setup in [`automation/README.md`](automation/README.md): verify adbyrd.com in Resend, create the HubSpot private app and run the properties script, set up the n8n credentials and Config node, and set `N8N_WEBHOOK_URL` / `N8N_WEBHOOK_SECRET` in Vercel.
 - **Budget ranges** in `lib/content.ts` (`inquiryOptions.budget`) are placeholders — adjust to your real engagement sizes.
 - **Insights** cards are marked "Coming soon" because the articles aren't published yet.
 - Add contact email/phone to the footer and contact page once confirmed.

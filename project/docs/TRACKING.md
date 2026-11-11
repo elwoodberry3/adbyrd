@@ -22,7 +22,7 @@ This site ships with the plumbing for full-funnel measurement. **Nothing loads u
 | Event | When | Key parameters | Mark as |
 | --- | --- | --- | --- |
 | `attribution_ready` | Every full page load | `first_touch_*`, `last_touch_*`, `landing_page` | — |
-| `generate_lead` | Inquiry form submitted | `form_name`, `service`, `project_stage`, `budget_range`, `first_touch_*`, `last_touch_*` | **GA4 key event**, Ads/Meta/LinkedIn/TikTok/UET conversion |
+| `generate_lead` | Inquiry **confirmed by the server** (`/api/inquiry` returned ok). Not fired on validation errors, failures or retries. | `form_name`, `submission_id`, `service`, `project_stage`, `budget_range`, `first_touch_*`, `last_touch_*` | **GA4 key event**, Ads/Meta/LinkedIn/TikTok/UET conversion |
 | `form_start` | First focus in inquiry form | `form_name` | Funnel step |
 | `phone_click` | Any `tel:` link | `phone_number`, `placement` | **Key event** |
 | `email_click` | Any `mailto:` link | `email`, `placement` | **Key event** |
@@ -35,7 +35,9 @@ This site ships with the plumbing for full-funnel measurement. **Nothing loads u
 
 Platform mapping when pixels load from env IDs: `generate_lead` → Meta `Lead`, TikTok `SubmitForm`, LinkedIn conversion, Google Ads conversion, UET `submit_lead_form`; contact clicks → Meta/TikTok `Contact`.
 
-In GA4, register custom dimensions for `service`, `budget_range`, `project_stage`, `placement`, `platform`, `first_touch_source`, `first_touch_medium`, `first_touch_campaign`.
+In GA4, register custom dimensions for `service`, `budget_range`, `project_stage`, `placement`, `platform`, `first_touch_source`, `first_touch_medium`, `first_touch_campaign`, `submission_id`.
+
+**Join key:** `submission_id` is a random UUID created per form fill. The same value is the HubSpot contact's `adbyrd_last_submission_id`, the title of its inquiry Note, and part of both Resend idempotency keys. Use it to match a conversion to a lead. No personal data (name, email, message) is ever sent to analytics.
 
 ## 3. UTM conventions
 
@@ -64,10 +66,11 @@ Outbound social links on this site already carry `utm_source=adbyrd.com&utm_medi
 - [ ] GA4: mark key events; set data retention to 14 months; link Google Ads and Search Console; enable Google Signals only if consent covers it.
 - [ ] Verify Search Console + Bing Webmaster Tools (tokens in env); submit `/sitemap.xml`.
 - [ ] Google Business Profile: NAP exactly `Adbyrd · 251 N Rose St, Kalamazoo, MI 49007 · +1 (888) 712-1694`; UTM'd website link; add `NEXT_PUBLIC_GBP_PROFILE_URL` and `NEXT_PUBLIC_GBP_REVIEW_URL`; replace geo coordinates in `lib/site-config.ts` with the GBP pin; add hours to JSON-LD.
-- [ ] Meta: verify domain, add Pixel ID; plan **Conversions API** (server-side) once the form posts to a backend.
+- [ ] Meta: verify domain, add Pixel ID; plan **Conversions API** (server-side). It can be added as an n8n step later, keyed on `submission_id`.
 - [ ] LinkedIn Insight Tag + lead conversion; TikTok Pixel; Microsoft UET; Clarity.
 - [ ] Enable Vercel Web Analytics and Speed Insights in the Vercel dashboard.
-- [ ] Wire the inquiry form to a backend/CRM and pass `getAttribution()` as hidden fields so every lead record carries its source.
+- [x] Inquiry form posts to `/api/inquiry` → n8n → HubSpot, with `getAttribution()` first/last touch on every lead (see `../automation/README.md`).
+- [ ] Finish the pipeline's manual setup and run its end-to-end checklist (`../automation/README.md`).
 - [ ] Run a cookie scan, complete the Cookie Policy table, and have counsel finalize all `/legal` pages.
 - [ ] Add a Content-Security-Policy (Report-Only first) allowing only enabled tag domains.
 - [ ] Test with GTM Preview, GA4 DebugView, Meta Events Manager test events, and Tag Assistant (consent states).
